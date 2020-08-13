@@ -1,7 +1,7 @@
-#Exercise
+# Exercise
 Given what you learned about `CALL` and `RET`, explain how you would read the value of `EIP`? Why can’t you just do `MOV EAX, EIP`?
 
-#Solution
+# Solution
 The contents of `EIP` aren't readable directly by a `MOV` instruction since such an instruction simply doesn't exist and can't be assembled.
 However there are workarounds. Indirectly, EIP can be read by performing a call:
 
