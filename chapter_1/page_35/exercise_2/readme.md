@@ -1,3 +1,7 @@
+# Exercise
+In the example walk-through, we did a nearly one-to-one translation of the assembly code to C. As an exercise, re-decompile this whole function so that it looks more natural. What can you say about the developer’s skill level/experience? Explain your reasons. Can you do a better job?
+
+# Solution
 ```
 LPCSTR g_processName = 0x10007C50;
 LPTHREAD_START_ROUTINE g_fn = (LPTHREAD_START_ROUTINE)0x100032D0;
