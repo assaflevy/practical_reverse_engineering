@@ -1,3 +1,5 @@
+#include "kstruct.h"
+
 //fffff802`8040b790 33c0 xor eax, eax
 //fffff802`8040b792 c70113010000    mov     dword ptr[rcx], 113h
 //fffff802`8040b798 48894138        mov     qword ptr[rcx + 38h], rax
@@ -7,25 +9,6 @@
 //fffff802`8040b7a8 c3              ret
 
 // With help from https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ke/dpcobj/kdpc.htm
-typedef struct
-{
-    union {
-        ULONG TargetInfoAsUlong;
-        struct {
-            UCHAR Type;
-            UCHAR Importance;
-            USHORT volatile Number;
-            UCHAR Expedite;
-        };
-    };
-    _SINGLE_LIST_ENTRY DpcListEntry;
-    UINT64 ProcessorHistory;
-    PVOID DeferredRoutine;
-    PVOID DeferredContext;
-    PVOID SystemArgument1;
-    PVOID SystemArgument2;
-    PVOID DpcData;
-} _KDPC, *PRKDPC;
 
 VOID
 NTAPI
