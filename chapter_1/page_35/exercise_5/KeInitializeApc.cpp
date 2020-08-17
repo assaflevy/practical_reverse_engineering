@@ -57,10 +57,10 @@ KeInitializeApc(
     Apc->NormalRoutine = NormalRoutine;
     Apc->KernelRoutine = KernelRoutine;
     // Really cool branchless programming in this part's assembly:
-    //fffff802`804c7a9a 488bc2           mov     rax, rdx                     ; 
-    //fffff802`804c7a9d 48f7d8           neg     rax                          ; rax = -rdx
-    //fffff802`804c7aa4 481bc9           sbb     rcx, rcx                     ; rcx = 0 if 
-    //fffff802`804c7aa7 48234c2440 and rcx, qword ptr[rsp + 40h]                ; rsp+40 is NormalContext parameters
+    //fffff802`804c7a9a 488bc2           mov     rax, rdx
+    //fffff802`804c7a9d 48f7d8           neg     rax
+    //fffff802`804c7aa4 481bc9           sbb     rcx, rcx
+    //fffff802`804c7aa7 48234c2440 and rcx, qword ptr[rsp + 40h]
     //fffff802`804c7aac 48f7da           neg     rdx
     //fffff802`804c7aaf 1ac0             sbb     al, al
     //fffff802`804c7ab1 22442438 and al, byte ptr[rsp + 38h]
