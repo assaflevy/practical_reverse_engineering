@@ -1,3 +1,5 @@
+#include "kstruct.h"
+
 //nt!KeInitializeApc:
 //fffff802`804c7a70 c60112          mov     byte ptr[rcx], 12h
 //fffff802`804c7a73 4c8bd1          mov     r10, rcx
@@ -28,26 +30,6 @@
 //nt!KeInitializeApc + 0x53:
 //fffff802`804c7ac3 448a824a020000  mov     r8b, byte ptr[rdx + 24Ah]
 //fffff802`804c7aca ebb4            jmp     nt!KeInitializeApc + 0x10 (fffff802`804c7a80)  Branch
-
-typedef struct _KAPC
-{
-    UCHAR Type;
-    UCHAR SpareByte0;
-    UCHAR Size;
-    UCHAR SpareByte1;
-    ULONG SpareLong0;
-    PKTHREAD Thread;
-    LIST_ENTRY ApcListEntry;
-    PVOID KernelRoutine;
-    PVOID RundownRoutine;
-    PVOID NormalRoutine;
-    PVOID NormalContext;
-    PVOID SystemArgument1;
-    PVOID SystemArgument2;
-    CHAR ApcStateIndex;
-    CHAR ApcMode;
-    UCHAR Inserted;
-} *PRKAPC;
 
 VOID
 NTAPI
