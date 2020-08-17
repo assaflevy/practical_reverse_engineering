@@ -1,3 +1,5 @@
+#include "kstruct.h"
+
 //nt!ObFastDereferenceObject:
 //fffff802`8049de50 4883ec28        sub     rsp, 28h
 //fffff802`8049de54 4c8bca          mov     r9, rdx
