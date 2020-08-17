@@ -1,3 +1,5 @@
+#include "kstruct.h"
+
 //nt!KxWaitForLockChainValid:
 //fffff802`804e0810 48895c2408      mov     qword ptr[rsp + 8], rbx
 //fffff802`804e0815 57              push    rdi
