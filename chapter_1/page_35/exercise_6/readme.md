@@ -6,6 +6,7 @@ After reading Chapter 3, return to this exercise to see if your understanding ha
 (Note: This sample is targeting Windows XP x86.)
 
 # Solution
+First off the function starts at sub_13842 in IDA/Ghidra.
 The target references NDIS.sys (so something to do with network), HAL.sys, ntoskrnl.exe.
 The import table seems obfuscated, and I don't have access to WinXP dlls. So I'm gonna go on a hunch here.
 Also, strings are referenced +3 bytes offset from where they actually begin. So in IDA "LoadLibrary" looks like "dLibrary" in IDA with the "Loa" part coming just before, as bytes.
