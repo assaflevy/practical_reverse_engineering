@@ -1,5 +1,6 @@
 # Exercise
-On Windows 8 x64, the following kernel functions have InitalizeListHead inlined at least once:<br>
+On Windows 8 x64, the following kernel functions have InitalizeListHead inlined at least once:
+
 ■ CcAllocateInitializeMbcb<br>
 ■ CmpInitCallbacks<br>
 ■ ExCreateCallback<br>
@@ -19,17 +20,19 @@ On Windows 8 x64, the following kernel functions have InitalizeListHead inlined 
 ■ MiInitializeLoadedModuleList<br>
 ■ MiInitializePrefetchHead<br>
 ■ PspAllocateProcess<br>
-■ PspAllocateThread
+■ PspAllocateThread<br>
+
+Identify where InitializeListHead is inlined in these routine
 
 # Solution
 
-#### Kernel version
+### Kernel version
 1: kd> version<br>
 Windows 10 Kernel Version 18362 MP (2 procs) Free x64<br>
 Product: WinNt, suite: TerminalServer SingleUserTS<br>
 Edition build lab: 18362.1.amd64fre.19h1_release.190318-1202
 
-#### Notes
+### Notes
 * Exercizes 1-6 cotain a list of 112 functions to analyze. Having went through that list I can now recognize list operations in my sleep.
 
 * Unlike the exercises, every function is analyzed once for all list operations (insert head/tail / remove).
